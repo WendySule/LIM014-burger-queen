@@ -1,6 +1,6 @@
-import burger from '../burger_log.svg';
-import allGalerry from '../All-Gallery.svg';
-import Waiter from '../Waiter-logo.svg';
+import burger from '../img-svg/burger_log.svg';
+import allGalerry from '../img-svg/All-Gallery.svg';
+import Waiter from '../img-svg/Waiter-logo.svg';
 
 function MenuBar() {
   return (

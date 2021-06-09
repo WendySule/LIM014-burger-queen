@@ -1,6 +1,6 @@
 import React from "react";
-import burger from '../burger_log.svg';
-import '../App.css';
+import burger from '../img-svg/burger_log.svg';
+import '../style/App.css';
 import { Link } from "react-router-dom";
 
 function Home() {

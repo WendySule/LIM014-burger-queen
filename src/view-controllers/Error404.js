@@ -1,5 +1,4 @@
 import React from "react";
-import '../App.css';
 
 function Error404() {
   return (
