@@ -235,3 +235,22 @@ header {
 width: 24px;
 margin-right: 10px;
 }
+/*Gallery*/
+.gallery {
+  margin-top: 30px;
+}
+.gallery-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.gallery-container p {
+  margin: 0;
+}
+.gallery-container img {
+  width: 298px;
+  height: 265px;
+  object-fit: cover;
+}
+
