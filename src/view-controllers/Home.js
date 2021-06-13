@@ -1,6 +1,7 @@
 import React from "react";
 import burger from '../img-svg/burger_log.svg';
 import '../style/App.css';
+import '../style/AppChef.css';
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -28,4 +29,3 @@ function Home() {
 }
 
 export default Home;
-  
