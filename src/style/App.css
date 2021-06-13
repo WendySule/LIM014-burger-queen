@@ -254,3 +254,35 @@ margin-right: 10px;
   height: 265px;
   object-fit: cover;
 }
+.select-breakfast input {
+  width: 30%;
+  height: 25px;
+  font-size: 20px;
+}
+
+#container-order ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#container-order li {
+  margin-left: 25px;
+}
+#order-data {
+  margin: 0;
+  padding:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#order-data span{
+  margin: 0;
+  padding:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+  font-weight: 500;
+  font-size: 22px;
+}
