@@ -1,25 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { desayuno } from '../collections/functions'
 
-class WaiterContainer extends Component {
-  state = {
-    loading : true,
-    product : null
-  }
-    async componentDidMount() {
-    const url = 'https://burger-queen-45750-default-rtdb.firebaseio.com/productos.json'
-    const response = await fetch(url)
-    const data = await response.json()
-    const arrayBreakfast = Object.values(data.desayuno);
-    const arrayMenu = Object.values(data.menu);
-    //console.log(data)
-    const newArray = arrayBreakfast.concat(arrayMenu);
-    //console.log(newArray)
-    this.setState({product : newArray, loading: false})
-
-  }
-  render () {
-
-     return (
+desayuno()
+function WaiterContainer() {
+  return (
       <div>
           <section className="waiter-container">
               <article>
@@ -28,19 +12,13 @@ class WaiterContainer extends Component {
                       <li><img src="https://image.flaticon.com/icons/png/512/887/887359.png" alt="icon-select-breakfast"/>desayuno</li>
                   </ul>
                   <div className="gallery">
-                    {this.state.loading || !this.state.product ?(
-                       <div>loading...</div>
-                       ) : (
                        <div className="gallery-container">
-                         {this.state.product.map((e) => (
-                           <div key={e.nombre}>
-                             <img src={e.img} alt={e.nombre}/>
-                             <p>$ {e.precio}</p>
-                             <p>{e.nombre}</p>
+                           <div key='nombre'>
+                             <img src='' alt=''/>
+                             <p>precio</p>
+                             <p>nombre product</p>
                            </div>
-                         ))}
                       </div>
-                      )}
                   </div>
               </article>
               <article className="select-breakfast">
@@ -57,5 +35,4 @@ class WaiterContainer extends Component {
       </div>
     );
   }
-}
 export default WaiterContainer;
