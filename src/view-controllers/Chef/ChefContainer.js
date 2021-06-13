@@ -8,37 +8,37 @@ import restart from './imgChef/restart.svg';
 function ChefContainer() {
   return (
     <section>
-        <section class="chef-container">
-            <section class='orders-chef'>
-                <h1 class='chef-title'>Pedidos al Chef</h1>
+        <section className="chef-container">
+            <section className='orders-chef'>
+                <h1 className='chef-title'>Pedidos al Chef</h1>
             </section>
-            <section class='data-container'>
-                <section class='orders-container'>
-                  <section class='container-principal'>
+            <section className='data-container'>
+                <section className='orders-container'>
+                  <section className='container-principal'>
                       <section>
-                        <h2 class='customers-names'>Cliente: Madison</h2>
+                        <h2 className='customers-names'>Cliente: Madison</h2>
                       </section>
-                      <section class='prepare-orders'>
+                      <section className='prepare-orders'>
                         <h3 >Pedidos:</h3>
-                        <section class='the-orders'>
+                        <section className='the-orders'>
                           <section id='ordersPrepare'>'aqui va los pedidos'</section>
-                          <input type='text' class='number-orders'></input>
+                          <input type='text' className='number-orders'></input>
                         </section>
                       </section>
-                      <section class='note-container'>
-                        <img src={customerNotes} class='note-icon' alt='customers-notes'/>
-                        <input type={Text} placeholder='Escriba una nota aquí' class='customer-notes'></input>
+                      <section className='note-container'>
+                        <img src={customerNotes} className='note-icon' alt='customers-notes'/>
+                        <input type='text' placeholder='Escriba una nota aquí' className='customer-notes'></input>
                       </section>
                   </section>
                 </section>
-                <section class='time-container'>
-                  <section class='count' id='hms'>00:00:00</section>
-                  <img src={play} class='btn start' alt='play'/>
-                  <img src={stop} class='btn stop' alt='stop'/>
-                  <img src={restart} class='btn restart' alt='restart'/>
+                <section className='time-container'>
+                  <section className='count' id='hms'>00:00:00</section>
+                  <img src={play} className='btn start' alt='play'/>
+                  <img src={stop} className='btn stop' alt='stop'/>
+                  <img src={restart} className='btn restart' alt='restart'/>
                 </section>
-                <section class='ready-container'>
-                  <img src={readyOrder} class='ready-order rotate' alt='ready-order'/>
+                <section className='ready-container'>
+                  <img src={readyOrder} className='ready-order rotate' alt='ready-order'/>
                 </section>
             </section>
         </section>
