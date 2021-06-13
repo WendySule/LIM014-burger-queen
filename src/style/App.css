@@ -183,11 +183,11 @@ header {
   grid-template-columns: 50% 50%;
   top: 10vh;
 }
-.waiter-container ul {
+.waiter-container .select-menu {
   display: grid;
   grid-template-columns: 50% 50%;
 }
-.waiter-container ul li {
+.waiter-container .select-menu li {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -202,7 +202,55 @@ header {
   font-weight: bold;
   font-size: 35px;
 }
-.waiter-container ul img {
+.waiter-container .select-menu img {
   width: 70px;
 }
 
+.waiter-container a {
+  text-decoration: none;
+  color: #000;
+}
+.waiter-container .select-breakfast {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #C4C4C4;
+  background-image: url("../img-svg/order-icon-background.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+
+  padding: 40px;
+  width: 623px;
+  height: 746px;
+}
+.waiter-container .select-breakfast li {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24px;
+
+}
+.select-breakfast li img{
+width: 24px;
+margin-right: 10px;
+}
+/*Gallery*/
+.gallery {
+  margin-top: 30px;
+}
+.gallery-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.gallery-container p {
+  margin: 0;
+}
+.gallery-container img {
+  width: 298px;
+  height: 265px;
+  object-fit: cover;
+}
