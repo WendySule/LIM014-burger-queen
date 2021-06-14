@@ -1,6 +1,7 @@
 import burger from '../img-svg/burger_log.svg';
 import allGalerry from '../img-svg/All-Gallery.svg';
 import Waiter from '../img-svg/Waiter-logo.svg';
+import { Link } from "react-router-dom";
 
 function MenuBar() {
   return (
@@ -10,7 +11,9 @@ function MenuBar() {
           <ul>
             <li>
               <div className="burger-logo-container">
-                <img src={burger} className="burger-logo-menu-bar" alt="logo-burger-queen" />
+                <Link to="createItem">
+                <img src={burger} className="burger-logo-menu-bar" alt="logo-burger-queen"/>
+                </Link>
                 <h1>burger queen</h1>
               </div>
             </li>
