@@ -1,5 +1,5 @@
 import React from "react";
-import Burger from './Order';
+import Burger from './Burger'
 
 function Cart({ cart, setCart }){
     return (
@@ -17,7 +17,5 @@ function Cart({ cart, setCart }){
             ))
             )}        
         </div>
-    )
-
-}
+)}
 export default Cart;
