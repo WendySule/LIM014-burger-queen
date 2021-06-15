@@ -1,0 +1,161 @@
+/* chef container */
+.chef-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  top: 10vh;
+}
+
+.data-container{
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+
+}
+
+.orders-chef {
+  margin: 0 auto;
+  margin-left: 148px;
+  align-items: center;
+  font-size: calc(100% + 10px);
+  width: 200px;
+  height: 50px;
+  padding-bottom: 363px;
+  padding-left: auto;
+
+}
+
+
+.customers-names{
+  font-size: calc(40% + 10px);
+  position: relative;
+  padding-bottom: 10px;
+
+}
+
+.chef-icon {
+  width: 70px;
+  margin-right: 40px;
+}
+
+.note-icon {
+  width: 31px;
+  padding-right: 9px;
+
+}
+
+.customer-notes{
+  background-color: #c2c0c0;
+  font-size: 12px;
+  border-radius: 8px;
+  width: 571px;
+  height: 26px;
+
+}
+
+.orders-container{
+  background: #5e5b5b;
+  width: 383px;
+  height: 198px;
+  margin: 0 auto;
+  padding: 25px;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 1.1em;
+  box-shadow: 5px 5px 0 #242424;
+  margin-left: -484px;
+}
+
+.prepare-orders{
+  background: #c2c0c0;
+  width: 328px;
+  height: 77px;
+  margin: 0 auto;
+  padding: 2em;
+  color: rgb(0, 0, 0);
+  border-radius: 7px;
+  font-size: calc(40% + 6px);
+}
+
+.note-container{
+  display: flex;
+  padding-top: 10px
+}
+
+/* cronometro */
+.time-container {
+  background-color: #c2c0c0;
+  width: 206px;
+  height: 108px;
+  border-radius: 38px;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 43px;
+}
+
+#hms {
+  height: 44px;
+  padding: 6px 0;
+  font-size: 33px;
+  color: #000;
+  font-family: alarm;
+  padding-left: 51px;
+  padding-top: 18px;
+}
+
+.btn {
+  display: inline-block;
+  width: 25px;
+}
+
+.start{
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.stop {
+  margin-right: 20px;
+}
+
+.restart {
+  margin-right: -11px;
+}
+
+.title-ready{
+  font-size: 26px;
+}
+
+.ready-order {
+  width: 105px;
+  margin-left: 390px;
+
+}
+
+.ready-container{
+  margin-bottom: 46px;
+  margin-left: auto;
+}
+
+.number-orders{
+    width: 65px;
+    height: 14px;
+    font-size: 9px;
+    border-radius: 10px;
+    margin-left: 96px;
+}
+
+.rotate{
+  transition: transform .7s ease-in-out;
+}
+.rotate:hover{
+  transform: rotate(-360deg);
+}
+
+.btn:hover{
+  transform: scale(1.2);
+}
+
+.the-orders{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
