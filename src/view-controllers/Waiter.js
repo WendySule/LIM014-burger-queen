@@ -1,6 +1,6 @@
 import React from "react";
 import MenuBar from'./MenuBar';
-import WaiterContainer from "./WaiterContainer-jsonFirebase";
+import WaiterContainer from "./WaiterContainer";
 
 function Waiter() {
   return (

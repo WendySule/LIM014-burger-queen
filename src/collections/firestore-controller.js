@@ -1,7 +1,8 @@
 import { db, auth } from './firebase-config'
 // Crea propiedades de un usuario
-const createUser = (src, name, price, info) => {
-    const addUserCollection = db.collection('desayuno').add({
+const createProduct = (src, name, price, info, id, description) => {
+    const addUserCollection = db.collection(description).doc(id).set({
+        id: id,
         img: src,
         product: name,
         price: price,
@@ -16,5 +17,5 @@ const state = () => { auth.onAuthStateChanged((user) => {
 }
 
 export {
-    createUser, state
+  createProduct, state
 }
