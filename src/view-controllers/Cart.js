@@ -28,9 +28,7 @@ function Cart({ cart, setCart }){
                             <hr/>
                             <div className="total-price-order">
                                 <h3>Total</h3>
-                            {cart.map((e, index) => (
-                                <p key={index}>${e.price}</p>
-                            ))}
+                                <p>{cart.map((e) => e.price).reduce( (a, b) => a + b, 0)}</p>
                             </div>
                         </div>
                     </div>
