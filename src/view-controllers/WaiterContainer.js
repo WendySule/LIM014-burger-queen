@@ -45,17 +45,19 @@ const [type, setType] = useState('menu')
                   </div>
               </article>
               <article className="select-breakfast">
-                <ul>
-                  <li><img src="https://image.flaticon.com/icons/png/512/43/43869.png" alt="more-icon"/>
-                    Datos del Pedido
-                  </li>
-                  <li><img src="https://image.flaticon.com/icons/png/512/43/43869.png" alt="more-icon"/>
-                    Productos del Cliente
-                  </li>
-                </ul>
+                <div className="subtile">
+                  <ul>
+                    <li><img src="https://image.flaticon.com/icons/png/512/43/43869.png" alt="more-icon"/>
+                      Datos del Pedido
+                    </li>
+                    <li><img src="https://image.flaticon.com/icons/png/512/43/43869.png" alt="more-icon"/>
+                      Productos del Cliente
+                    </li>
+                  </ul>
+                </div>
                 <Cart
-                cart= {cart}
-                setCart= {setCart}
+                  cart= {cart}
+                  setCart= {setCart}
                 />
               </article>
           </section>

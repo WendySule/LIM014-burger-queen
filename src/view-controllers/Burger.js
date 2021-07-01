@@ -12,25 +12,26 @@ function Burger({ burger, cart, setCart, burgers }){
     }
     return (
         <div key={id}>
-                { burgers ? (
-                    <div>
-                        <img src={img} alt={product}/>
-                        <p>$ {price}</p>
-                        <p>{product}</p> 
-                        <button type='button' onClick={() => addBurger(id)}>Agregar carrito
-                        </button>
-                    </div>
+            { burgers ? (
+                <div>
+                    <img src={img} alt={product}/>
+                    <p>${price}</p>
+                    <p>{product}</p> 
+                    <button type='button' onClick={() => addBurger(id)}>Agregar carrito
+                    </button>
+                </div>
                 ) : (
-                    <div>
-                        <p>{product}</p> 
-                        <p>$ {price}</p>
-                        <p>1</p>
-                        <p>$ {price}</p>
-                        <button type='button' onClick={() => delBurger(id)}> Eliminar
-                        </button> 
-                    </div>       
+                <>
+                    <ul className="flex-column">
+                        <li>{product}</li> 
+                        <li>${price}</li>
+                        <li>1</li>
+                        <li>${price}</li>
+                        <li onClick={() => delBurger(id)}><img src="https://image.flaticon.com/icons/png/512/3096/3096687.png" id="icon-delete"alt="icon-delete"/></li>
+                    </ul>     
+                </>
                 )
-                }
+            }
         </div>
     )
 
