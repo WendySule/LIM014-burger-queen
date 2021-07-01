@@ -7,14 +7,37 @@ function Cart({ cart, setCart }){
             {cart.length === 0 ? (
             <p>No hay pedido.</p>
             ) : (
-            cart.map((burger) => (
-                <Burger
-                key={burger.id}
-                burger={burger}
-                cart={cart}
-                setCart={setCart}
-                />
-            ))
+                <div>
+                    <div className="background-order-list">
+                        <ul className="flex-column">
+                            <li>Producto</li>
+                            <li>Precio</li>
+                            <li>Cantidad</li>
+                            <li>Total</li>
+                            <li></li>
+                        </ul>
+                    {cart.map((e) => (
+                        <Burger
+                        key={e.id}
+                        burger={e}
+                        cart={cart}
+                        setCart={setCart}
+                        />
+                    ))}
+                        <div>
+                            <hr/>
+                            <div className="total-price-order">
+                                <h3>Total</h3>
+                            {cart.map((e, index) => (
+                                <p key={index}>${e.price}</p>
+                            ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="send-order">
+                        <button id="send-order">Enviar</button>
+                    </div>
+                </div>
             )}        
         </div>
 )}
