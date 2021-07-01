@@ -25,11 +25,11 @@ function Burger({ burger, cart, setCart, burgers }){
                 ) : (
                     <div>
                         <button type='button' onClick={() => addBurger(id)}> Confirmar
-                        </button> 
+                        </button>
 
                         <button type='button' onClick={() => delBurger(id)}> Eliminar
-                        </button> 
-                    </div>       
+                        </button>
+                    </div>
                 )
                 }
             </ul>

@@ -36,9 +36,9 @@ const [type, setType] = useState('menu')
                         <Burger
                           key= {e.id}
                           burger = {e}
-                          cart = {cart}   
+                          cart = {cart}
                           setCart={setCart}
-                          burgers={menu}   
+                          burgers={menu}
                           />
                         ))}
                       </div>
@@ -63,3 +63,6 @@ const [type, setType] = useState('menu')
     );
   }
 export default WaiterContainer;
+
+
+
