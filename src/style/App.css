@@ -263,7 +263,8 @@ margin-right: 10px;
   background-color: #8A8A8A;
   padding: 10px;
   border-radius: 10px;
-  width: 90%;
+  width: 85%;
+  margin: 0;
   margin-top: 20px;
 }
 .background-order-list>ul:nth-child(1) {
@@ -311,7 +312,7 @@ hr {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  right: 40px;
+  right: 75px;
   margin-top: 10px;
 }
 #send-order {
@@ -330,5 +331,36 @@ hr {
 .btn-AddSubtrat{
   height: 25px
 }
+.style-data-order>form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.style-data-order>form>label {
+  display: grid;
+  grid-template-columns: 25% 50%;
 
-
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 15px;
+  margin-top: 5px;
+  color: rgb(44, 44, 44);
+}
+.style-data-order input {
+  width: 20em;
+  height: 2.2em;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.style-none {
+  display: none;
+}
+.btn-save-data-order {
+  margin-left: 2em;
+}
+.btn-save-data-order>button {
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+}
