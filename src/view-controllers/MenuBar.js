@@ -11,7 +11,7 @@ function MenuBar() {
           <ul>
             <li>
               <div className="burger-logo-container">
-                <Link to="createItem">
+                <Link to="/">
                 <img src={burger} className="burger-logo-menu-bar" alt="logo-burger-queen"/>
                 </Link>
                 <h1>burger queen</h1>

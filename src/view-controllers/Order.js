@@ -1,40 +1,38 @@
-import React from "react";
-
-function Burger({ burger, cart, setCart, burgers }){
-    const { nombre, precio, id } = burger;
-    const addBurger = id => {
-        const burger = burgers.filter((burger) => burger.id === id)
-        setCart([...cart, ...burger])
+// Suma de cantidades
+const add= (cart, setCart, burger) => {
+    const existProduct = cart.find((products) => products.id === burger.id)
+    if (existProduct) {
+      setCart(
+        cart.map((products) =>
+          products.id === burger.id ? { ...existProduct, quanty: existProduct.quanty + 1 } : products
+        )
+      )
+    } else {
+      setCart([...cart, { ...burger, quanty: 1 }])
     }
-    const delBurger = id => {
-        const burger = cart.filter((burger) => burger.id !== id)
-        setCart([...burger])
+  } 
+
+const subtrat = (cart, setCart, burger) => {
+    const existProduct = cart.find((products) => products.id === burger.id)
+    if (existProduct.quanty === 1) {
+      setCart(cart.filter((products) => products.id !== burger.id))
+    } else {
+      setCart(
+        cart.map((products) =>
+        products.id === burger.id ? { ...existProduct, quanty: existProduct.quanty - 1 } : products
+        )
+      )
     }
-    return (
-        <div>
-            <ul>
-                <li>{nombre}
-                </li>
-                <li>${precio}
-                </li>
-                { burgers ? (
-                    <div>
-                    <button type='button' onClick={() => addBurger(id)}>Agregar carrito
-                    </button>
-                    </div>
-                ) : (
-                    <div>
-                        <button type='button' onClick={() => addBurger(id)}> Confirmar
-                        </button>
+  }
+  const totalAdd = (burger) => burger.price*burger.quanty  
 
-                        <button type='button' onClick={() => delBurger(id)}> Eliminar
-                        </button>
-                    </div>
-                )
-                }
-            </ul>
-        </div>
-    )
-
+  const delBurger = (cart, setCart, burger) => {
+    const product = cart.filter((products) => products.id !== burger.id)
+    setCart([...product])
 }
-export default Burger;
+
+const totalOrder = (cart) => cart.reduce((a, c) => a + c.quanty * c.price, 0) 
+
+export {
+    add, subtrat, totalAdd, delBurger, totalOrder
+  }
