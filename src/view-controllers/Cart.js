@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 import Burger from './Burger'
 
-function Cart({ cart, setCart }){
+
+function Cart({ cart, setCart}){
+
+  const cancelOrder = () => setCart([]);
+
     return (
         <div>
             {cart.length === 0 ? (
@@ -28,17 +32,18 @@ function Cart({ cart, setCart }){
                             <hr/>
                             <div className="total-price-order">
                                 <h3>Total</h3>
-                            {cart.map((e, index) => (
-                                <p key={index}>${e.price}</p>
-                            ))}
+                                <p>{cart.map((e) => e.price).reduce( (a,b) => a + b, 0)}</p>
                             </div>
                         </div>
                     </div>
                     <div className="send-order">
                         <button id="send-order">Enviar</button>
                     </div>
+                    <div className="cancel-order">
+                        <button id="cancel-order" onClick={cancelOrder}>Cancelar</button>
+                    </div>
                 </div>
-            )}        
+            )}
         </div>
 )}
 export default Cart;
