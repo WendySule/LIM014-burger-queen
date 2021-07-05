@@ -70,7 +70,7 @@ function Cart({ cart, setCart }){
                                 <li className='counter'>{e.quanty}</li>
                                 <button type='button' className='btn-AddSubtrat' onClick={() => subtrat(cart, setCart, e)}>➖ </button>
                                 <li>{totalAdd(e, setCart)}</li>
-                                <li onClick={() => delBurger(e.id, cart, setCart)}><img src="https://image.flaticon.com/icons/png/512/3096/3096687.png" id="icon-delete"alt="icon-delete"/></li>
+                                <li onClick={() => delBurger(cart, setCart, e)}><img src="https://image.flaticon.com/icons/png/512/3096/3096687.png" id="icon-delete"alt="icon-delete"/></li>
                             </ul>
                         <Burger
                             key={e.id}

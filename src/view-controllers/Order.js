@@ -1,6 +1,6 @@
 // Suma de cantidades
 const add= (cart, setCart, burger) => {
-    const existProduct = cart.find((products) => products.id === burger.id);
+    const existProduct = cart.find((products) => products.id === burger.id)
     if (existProduct) {
       setCart(
         cart.map((products) =>
@@ -12,8 +12,8 @@ const add= (cart, setCart, burger) => {
     }
   } 
 
-  const subtrat = (cart, setCart, burger) => {
-    const existProduct = cart.find((products) => products.id === burger.id);
+const subtrat = (cart, setCart, burger) => {
+    const existProduct = cart.find((products) => products.id === burger.id)
     if (existProduct.quanty === 1) {
       setCart(cart.filter((products) => products.id !== burger.id))
     } else {
@@ -25,16 +25,13 @@ const add= (cart, setCart, burger) => {
     }
   }
   const totalAdd = (burger) => burger.price*burger.quanty  
-  
-  const delBurger = (id, cart, setCart) => {
-    const burger = cart.filter((burger) => burger.id !== id)
-    setCart([...burger])
+
+  const delBurger = (cart, setCart, burger) => {
+    const product = cart.filter((products) => products.id !== burger.id)
+    setCart([...product])
 }
 
-const totalOrder = (cart) => {
-    const totalPrice = cart.reduce((a, c) => a + c.quanty * c.price, 0)
-    return totalPrice
-}
+const totalOrder = (cart) => cart.reduce((a, c) => a + c.quanty * c.price, 0) 
 
 export {
     add, subtrat, totalAdd, delBurger, totalOrder

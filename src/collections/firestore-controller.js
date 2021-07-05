@@ -15,13 +15,13 @@ const state = () => { auth.onAuthStateChanged((user) => {
     console.log(user)
   })
 }
-const createOrder = (wName, cName, nTable, cart, totaPrice) => {
+const createOrder = (wName, cName, nTable, order, totalOrder) => {
   const addOrderCollection = db.collection('order').add({
       waiterName: wName,
       clientName: cName,
       numberTable: nTable,
-      products: cart,
-      totaPriceOrder: totaPrice
+      products: order,
+      totaPriceOrder: totalOrder
   });
   return addOrderCollection;
 };
