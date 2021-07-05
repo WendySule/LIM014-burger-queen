@@ -1,10 +1,8 @@
 import React from "react";
 import { add } from './Order'
 
-
-function Burger({ burger, cart, setCart, burgers }){
+function Burger({ burger, cart, setCart }){
     const { product, price, id, img } = burger;
-
     return (
         <div key={id}>
             { burgers ? (
@@ -22,8 +20,8 @@ function Burger({ burger, cart, setCart, burgers }){
             }
         </div>
     )
-
 }
+
 export default Burger;
 
 

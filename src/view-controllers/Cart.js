@@ -3,9 +3,9 @@ import Burger from './Burger'
 import { add, subtrat, totalAdd, delBurger, totalOrder } from './Order'
 import { createOrder } from '../collections/firestore-controller'
 
+function Cart({ cart, setCart}){
 
-
-function Cart({ cart, setCart }){
+  const cancelOrder = () => setCart([]);
 
     const [dataOrder, setDataOrder] = useState({
         waiterName: '',
@@ -91,8 +91,11 @@ function Cart({ cart, setCart }){
                     <div className="send-order">
                         <button id="send-order" onClick={() => sendDataOrder(setCart)}>Enviar</button>
                     </div>
+                    <div className="cancel-order">
+                        <button id="cancel-order" onClick={cancelOrder}>Cancelar</button>
+                    </div>
                 </div>
-            )}        
+            )}
         </div>
 )}
 export default Cart;
