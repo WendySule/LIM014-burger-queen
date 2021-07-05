@@ -52,7 +52,8 @@ function ChefContainer() {
                       </section>
                       <section className='note-container'>
                         <img src={customerNotes} className='note-icon' alt='customers-notes'/>
-                        <input type='text' placeholder='Escriba una nota aquí' className='customer-notes'></input>
+                        <div className='customer-notes'>N° Table: <span>{e.numberTable}</span></div>
+                        <div className='customer-notes'>Waiter: <span>{e.waiterName}</span></div>
                       </section>
                   </section>
                   <div className = 'time-order'>
