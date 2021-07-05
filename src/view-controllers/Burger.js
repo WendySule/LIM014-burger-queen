@@ -1,7 +1,7 @@
 import React from "react";
 import { add } from './Order'
 
-function Burger({ burger, cart, setCart }){
+function Burger({ burger, cart, setCart, burgers }){
     const { product, price, id, img } = burger;
     return (
         <div key={id}>

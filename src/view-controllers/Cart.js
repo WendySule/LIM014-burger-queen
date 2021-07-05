@@ -1,28 +1,47 @@
-import React, {useState} from "react";
+import React, {useState, useReducer, useEffect } from "react";
 import Burger from './Burger'
-import { add, subtrat, totalAdd, delBurger, totalOrder } from './Order'
+import { add, subtrat, totalAdd, delBurger, totalOrder, cancelOrder } from './Order'
 import { createOrder } from '../collections/firestore-controller'
 
 function Cart({ cart, setCart}){
-
-  const cancelOrder = () => setCart([]);
-
-    const [dataOrder, setDataOrder] = useState({
+    const initialState = {
         waiterName: '',
         clientName: '',
         numberTable: ''
-    })     
+    }
+
+    const [dataOrder, setDataOrder] = useState(initialState) 
+    const [totalPrice, setTotalPrice] = useState(totalOrder(cart)) 
+    
+    useEffect(() => {
+        setTotalPrice(totalOrder(cart))
+    }, [cart])
+
     const handleInputChange = (e) => {
         setDataOrder({
             ...dataOrder,
             [e.target.name] : e.target.value
         })
     }
-    const sendDataOrder = (setCart) => {
-        const totalOrder = document.querySelector('#totalOrder').textContent
-        createOrder(dataOrder.waiterName , dataOrder.clientName, parseInt(dataOrder.numberTable), cart, parseInt(totalOrder))
-        setCart([])
+    const reducer = (state, action) => {
+        if (action.type === "reset") {
+            setDataOrder(initialState)
+            return initialState;
+        }
+    
+        const result = { ...state };
+        result[action.type] = action.value;
+        return result;
     }
+
+    const [state, dispatch] = useReducer(reducer, initialState)
+
+    const sendDataOrder = (setCart) => {
+        createOrder(dataOrder.waiterName , dataOrder.clientName, parseInt(dataOrder.numberTable), cart, parseInt(totalPrice))
+        setCart([])
+        dispatch({ type: "reset" })
+    }
+
 
     return (
         <div>
@@ -34,13 +53,13 @@ function Cart({ cart, setCart}){
                         <div className="style-data-order">
                           <form>
                               <label> Waiter name
-                                <input placeholder="Waiter Burger Queen"  type="text" onChange={handleInputChange} name="waiterName"/>
+                                <input placeholder="Waiter Burger Queen"  type="text" onChange={handleInputChange} name="waiterName" value={dataOrder.waiterName}/>
                               </label>
                               <label> Client name
-                                <input placeholder="Client Burger Queen"  type="text" onChange={handleInputChange} name="clientName"/>
+                                <input placeholder="Client Burger Queen"  type="text" onChange={handleInputChange} name="clientName" value={dataOrder.clientName}/>
                               </label>
                               <label> N° Table
-                                <input placeholder="N° Table"  type="number" onChange={handleInputChange} name="numberTable"/>
+                                <input placeholder="N° Table"  type="number" onChange={handleInputChange} name="numberTable" value={dataOrder.numberTable}/>
                               </label>
                               </form>
                         </div>
@@ -84,7 +103,7 @@ function Cart({ cart, setCart}){
                             <hr/>
                             <div className="total-price-order">
                                 <h3>Total</h3>
-                                <p id="totalOrder">{totalOrder(cart)}</p>
+                                <p id="totalOrder">{totalPrice}</p>
                             </div>
                         </div>
                     </div>
@@ -92,7 +111,7 @@ function Cart({ cart, setCart}){
                         <button id="send-order" onClick={() => sendDataOrder(setCart)}>Enviar</button>
                     </div>
                     <div className="cancel-order">
-                        <button id="cancel-order" onClick={cancelOrder}>Cancelar</button>
+                        <button id="cancel-order" onClick={() => cancelOrder(setCart)}>Cancelar</button>
                     </div>
                 </div>
             )}

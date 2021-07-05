@@ -31,8 +31,10 @@ const subtrat = (cart, setCart, burger) => {
     setCart([...product])
 }
 
-const totalOrder = (cart) => cart.reduce((a, c) => a + c.quanty * c.price, 0) 
+const totalOrder = (cart) => cart.reduce((a, c) => a + c.quanty * c.price, 0)
+
+const cancelOrder = (setCart) => setCart([])
 
 export {
-    add, subtrat, totalAdd, delBurger, totalOrder
+    add, subtrat, totalAdd, delBurger, totalOrder,cancelOrder
   }
