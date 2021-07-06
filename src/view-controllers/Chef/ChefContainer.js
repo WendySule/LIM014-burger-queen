@@ -11,7 +11,10 @@ function ChefContainer() {
   const [menu, setMenu] = useState([])
   const [cart, setCart] = useState([])
   const [type, setType] = useState('menu')
-  
+  const [time, setTime] = useState(0);
+  const [timerOn, setTimerOn] = useState(false);
+
+    //traer la data para mostrar en ventana chef
     useEffect(() => {
     var docRef = db.collection('order')
 
@@ -25,6 +28,22 @@ function ChefContainer() {
       //console.log(documents)
     })
   }, [type])
+
+    //cronómetro actulizando con useEffect
+    //null pq sera el hook que encienda y apague, se necesita tener acceso a ese intervalo
+    useEffect(() => {
+      let interval = null;
+
+      if (timerOn) {
+        interval = setInterval(() => {
+          setTime(prevTime => prevTime + 10)
+        }, 10)
+      } else if (!timerOn) {
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval);
+    }, [timerOn]);
+
 
   return (
     <section>
@@ -42,11 +61,11 @@ function ChefContainer() {
                       <section className='prepare-orders'>
                         <h3 >Pedidos:</h3>
                         <section>
-                        {e.products.map((cart, index) => 
+                        {e.products.map((cart, index) =>
                            <div className='the-orders' key= {index}>
                             <section id='ordersPrepare'>{cart.product}</section>
                             <span type='text' className='number-orders'>{cart.quanty}</span>
-                          </div>  
+                          </div>
                         )}
                         </section>
                       </section>
@@ -58,11 +77,23 @@ function ChefContainer() {
                   </section>
                   <div className = 'time-order'>
                     <section className='time-container'>
-                      <section className='count' id='hms'>00:00:00</section>
-                        <img src={play} className='btn start' alt='play'/>
-                        <img src={stop} className='btn stop' alt='stop'/>
-                        <img src={restart} className='btn restart' alt='restart'/>
+                      <section className='count' id='hms'>
+                        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+                        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+                        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
                       </section>
+                      <section >
+                        {!timerOn && time === 0 && (
+                          <img src={play} className='btn' alt='play'onClick={() => setTimerOn(true)}/>
+                        )}
+                        {timerOn && (
+                          <img src={stop} className='btn' alt='stop'onClick={() => setTimerOn(false)}/>
+                        )}
+                        {!timerOn && time !== 0 && (
+                          <img src={restart} className='btn' alt='restart' onClick={() => setTime(0)}/>
+                        )}
+                      </section>
+                    </section>
                     <section className='ready-container'>
                       <img src={readyOrder} className='ready-order rotate' alt='ready-order'/>
                     </section>
