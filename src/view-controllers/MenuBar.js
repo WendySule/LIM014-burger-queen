@@ -1,7 +1,7 @@
-import burger from '../img-svg/burger_log.svg';
-import allGalerry from '../img-svg/All-Gallery.svg';
-import Waiter from '../img-svg/Waiter-logo.svg';
-import { Link } from "react-router-dom";
+import burger from '../img-svg/burger_log.svg'
+import allGalerry from '../img-svg/All-Gallery.svg'
+import Waiter from '../img-svg/Waiter-logo.svg'
+import { Link } from "react-router-dom"
 
 function MenuBar() {
   return (
@@ -41,4 +41,4 @@ function MenuBar() {
   );
 }
 
-export default MenuBar;
+export default MenuBar
