@@ -115,20 +115,9 @@
 
 .btn {
   display: inline-block;
-  width: 25px;
-}
+  width: 23px;
+  margin-left: 95px;
 
-.start{
-  margin-left: 50px;
-  margin-right: 20px;
-}
-
-.stop {
-  margin-right: 20px;
-}
-
-.restart {
-  margin-right: -11px;
 }
 
 .title-ready{
@@ -175,6 +164,7 @@
   align-items: center;
   margin-left: 10em;
 }
+
 #history-Order{
   list-style: none;
   text-decoration: none;
