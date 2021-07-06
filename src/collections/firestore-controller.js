@@ -15,17 +15,32 @@ const state = () => { auth.onAuthStateChanged((user) => {
     console.log(user)
   })
 }
-const createOrder = (wName, cName, nTable, order, totalOrder) => {
+const newDate = () => {
+  const date = []
+  const getHours = new Date().getHours()
+  const getMinutes = new Date().getMinutes()
+  const getSeconds = new Date().getSeconds()
+    date.push(getHours, getMinutes, getSeconds)
+  return (date)
+}
+const createOrder = (wName, cName, nTable, order, totalOrder, newDate) => {
   const addOrderCollection = db.collection('order').add({
       waiterName: wName,
       clientName: cName,
       numberTable: nTable,
       products: order,
-      totaPriceOrder: totalOrder
-  });
+      totaPriceOrder: totalOrder,
+      status: "pending",
+      timeOrder: new Date().toLocaleString('GMT-0500'),
+      timeHourStart: newDate,
+  })
   return addOrderCollection;
-};
+}
+const editStatus = (id, newDate) => db.collection('order').doc(id).update({
+  status: 'completed',
+  timeEnd: newDate,
+})
 
 export {
-  createProduct, state, createOrder
+  createProduct, state, createOrder, editStatus, newDate
 }

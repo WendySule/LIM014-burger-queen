@@ -1,7 +1,7 @@
 import React, {useState, useReducer, useEffect } from "react";
 import Burger from './Burger'
 import { add, subtrat, totalAdd, delBurger, totalOrder, cancelOrder } from './Order'
-import { createOrder } from '../collections/firestore-controller'
+import { createOrder, newDate } from '../collections/firestore-controller'
 
 function Cart({ cart, setCart}){
     const initialState = {
@@ -37,7 +37,7 @@ function Cart({ cart, setCart}){
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const sendDataOrder = (setCart) => {
-        createOrder(dataOrder.waiterName , dataOrder.clientName, parseInt(dataOrder.numberTable), cart, parseInt(totalPrice))
+        createOrder(dataOrder.waiterName , dataOrder.clientName, parseInt(dataOrder.numberTable), cart, parseInt(totalPrice), newDate())
         setCart([])
         dispatch({ type: "reset" })
     }

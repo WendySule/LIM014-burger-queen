@@ -1,6 +1,6 @@
-import React from 'react';
-import ChefMenu from './ChefMenu';
-import ChefContainer from './ChefContainer';
+import React from 'react'
+import ChefMenu from './ChefMenu'
+import ChefContainer from './ChefContainer'
 
 
 function Chef() {
