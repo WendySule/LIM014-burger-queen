@@ -41,6 +41,10 @@ const editStatus = (id, newDate) => db.collection('order').doc(id).update({
   timeEnd: newDate,
 })
 
+const statusReady = (id) => db.collection('order').doc(id).update({
+  status: 'finished',
+})
+
 export {
-  createProduct, state, createOrder, editStatus, newDate
+  createProduct, state, createOrder, editStatus, newDate, statusReady
 }

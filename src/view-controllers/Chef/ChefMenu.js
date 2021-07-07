@@ -29,6 +29,7 @@ function ChefMenu() {
             </li>
             <Link to="/HistorialContainer" id="history-Order">Historial</Link>
             <li>
+
               <img src={Chef} className="chef-icon" alt="chef-icon" />
             </li>
           </ul>

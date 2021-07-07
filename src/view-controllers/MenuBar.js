@@ -31,13 +31,15 @@ function MenuBar() {
                 </div>
               </div>
             </li>
+            <Link to="/SendOrder" id="history-Order">Serve the order</Link>
+            <Link to="/OrderHistory" id="history-Order">Order History</Link>
             <li>
               <img src={Waiter} className="icon-waiter" alt="icon-waiter" />
             </li>
           </ul>
         </nav>
       </section>
-    </div> 
+    </div>
   );
 }
 

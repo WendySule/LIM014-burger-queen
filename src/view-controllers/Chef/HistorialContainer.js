@@ -6,7 +6,7 @@ import customerNotes from './imgChef/customerNotes.svg'
 function HistorialContainer() {
     const [menu, setMenu] = useState([])
     const type = null
-    
+
       useEffect(() => {
       var docRef = db.collection('order')
       docRef.orderBy('timeEnd', 'desc').onSnapshot((querySnapshot) => {
@@ -77,32 +77,32 @@ function HistorialContainer() {
                       <section className='prepare-orders'>
                         <h3 >Pedidos:</h3>
                         <section>
-                        {e.products.map((cart, index) => 
+                        {e.products.map((cart, index) =>
                            <div className='the-orders' key= {index}>
                             <section id='ordersPrepare'>{cart.product}</section>
                             <span type='text' className='number-orders'>{cart.quanty}</span>
-                          </div>  
+                          </div>
                         )}
                         </section>
                       </section>
                       <section className='note-container'>
                         <img src={customerNotes} className='note-icon' alt='customers-notes'/>
-                        <div className='customer-notes'>N° Table: <span>{e.numberTable}</span></div>
+                        <div className='customer-notes'>Number Table:<span>{e.numberTable}</span></div>
                         <div className='customer-notes'>Waiter: <span id="waitername-style-orderChef">{e.waiterName}</span></div>
                       </section>
                       <section className='note-container'>
                         <img src="https://image.flaticon.com/icons/png/512/1497/1497835.png"  className='note-icon' alt='customers-notes'/>
-                        <div className='customer-notes'>Hora Inicial: <span id="waitername-style-orderChef">{renderTimeStart(e.timeHourStart[0],e.timeHourStart[1],e.timeHourStart[2])}</span></div>
-                        <div className='customer-notes'>Hora Final: <span id="waitername-style-orderChef">{renderTimeEnd(e.timeEnd[0],e.timeEnd[1],e.timeEnd[2])}</span></div>
+                        <div className='customer-notes'> Start :<span id="waitername-style-orderChef">{renderTimeStart(e.timeHourStart[0],e.timeHourStart[1],e.timeHourStart[2])}</span></div>
+                        <div className='customer-notes'>Finish : <span id="waitername-style-orderChef">{renderTimeEnd(e.timeEnd[0],e.timeEnd[1],e.timeEnd[2])}</span></div>
                       </section>
                       <section className='note-container'>
                         <img src="https://image.flaticon.com/icons/png/512/1584/1584942.png"className='note-icon' alt='customers-notes'/>
-                        <div className='customer-notes'>Tiempo estimado: <span id="waitername-style-orderChef">{timeCalculate(e.timeHourStart, e.timeEnd)}</span></div>
+                        <div className='customer-notes'>Time :<span id="waitername-style-orderChef">{timeCalculate(e.timeHourStart, e.timeEnd)}</span></div>
                       </section>
                   </section>
                 </section>
             ))}
-            </section> 
+            </section>
         </section>
     </div>
   );
